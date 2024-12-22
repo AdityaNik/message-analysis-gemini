@@ -7,7 +7,6 @@ export const openai = new OpenAI({
     project: '',
 })
 
-
 // API route handler
 export default async function handler(req: Request) {
     if (req.method === 'POST') {
