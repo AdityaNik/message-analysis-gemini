@@ -1,15 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import os from 'os';
-/*
-const openai = new OpenAI({
-    organization: 'org-iG7Wks2EyTgfMKb7EE8BrN6L',
-    project: 'proj_lsMS5WhiDTIetcHXqmiG3s18',
-    apiKey: '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',
-    dangerouslyAllowBrowser: true
-})
-*/
 
 const genAI = new GoogleGenerativeAI("YOUR_GEMINI_API_KEY");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -83,7 +74,7 @@ export default function Home() {
                 `,
             })
 
-            */
+           */
 
             //console.log("Response: ", res);
 

@@ -3,22 +3,21 @@ import OpenAI from 'openai';
 
 
 export const openai = new OpenAI({
-    organization: 'testing',
-    project: 'Default project',
-    apiKey: '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'
+    organization: '',
+    project: '',
 })
 
 
 // API route handler
 export default async function handler(req: Request) {
-    if(req.method === 'POST') {
+    if (req.method === 'POST') {
         try {
             // Parse the request body
             const body = await req.json();
             const { content } = body;
 
             console.log(body);
-    
+
             if (!content) {
                 return NextResponse.json(
                     { error: 'Content is required for analysis.' },
@@ -41,7 +40,7 @@ export default async function handler(req: Request) {
                     ${content}
                 `,
             })
-    
+
             console.log("Response: ", res);
             return NextResponse.json({
                 // analysis: response.data.choices[0].message.content,
@@ -53,7 +52,7 @@ export default async function handler(req: Request) {
                 { status: 500 }
             );
         }
-    }else {
+    } else {
         NextResponse.error()
     }
 }
